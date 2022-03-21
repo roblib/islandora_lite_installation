@@ -1,1 +1,1 @@
-# islandora_lite_installation
+# islandora_lite_installation scripts and configs
