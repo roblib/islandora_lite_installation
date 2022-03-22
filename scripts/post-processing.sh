@@ -59,7 +59,7 @@ field_media_use:
 name:
   type: string_textfield
   weight: 0
-  region: content
+  region: contentisle-dc/commit/c4d00f232c22b1f6285f2508503d4a41a3d29004
   settings:
     size: 60
     placeholder: ''
@@ -131,4 +131,12 @@ name:
     size: 60
     placeholder: ''
   third_party_settings: {}"
-  
+ 
+# Additional file mime types
+drush -y  config:set filemime.settings types "
+image/jp2 jp2
+application/gzip warc
+application/gzip wacz
+application/vnd.apple.mpegurl m3u8
+application/json json"
+
