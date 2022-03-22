@@ -2,9 +2,10 @@
 DOMAIN=$1
 DRUPAL_DEFAULT_ACCOUNT_PASSWORD=$2
 URL="https://${DOMAIN}/term_from_uri?_format=json&uri=https%3A%2F%2Fschema.org%2FBook"
-
 BOOK_TERM_ID=$(curl -u admin:$DRUPAL_DEFAULT_ACCOUNT_PASSWORD -X GET $URL | jq .[].tid[].value)
+MANIFEST_URL="https://${DOMAIN}/node/[node:nid]/book-manifest"
 
+# Set book-manifest url
 drush -y --input-format=yaml config:set block.block.miradorblock visibility.term "
 id: term
 tid:
@@ -13,3 +14,5 @@ tid:
 negate: false
 context_mapping: {  }"
 
+# Set book-manifest url
+drush -y config:set block.block.miradorblock settings.iiif_manifest_url $MANIFEST_URL
