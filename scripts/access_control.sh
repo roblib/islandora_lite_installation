@@ -9,7 +9,7 @@ fi
 inital_path=/var/www/drupal
 
 #current site
-site_path="${inital_path}"/..
+site_path="${inital_path}"
 
 public_files_path="${site_path}"/web/sites/default/files
 private_files_path="${site_path}"/web/sites/default/private_files
