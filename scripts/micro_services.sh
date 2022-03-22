@@ -47,9 +47,9 @@ elif [ $1 == "docker" ]; then
     fits_config_var="fits-path"
     
     # Setup Fits
-    mkdir -p /opt/fits
-    wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
-    unzip /opt/fits/fits-latest.zip
+    #mkdir -p /opt/fits
+    #wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
+    #unzip /opt/fits/fits-latest.zip
 else
   echo "Please enter which environment you running this script on"
   exit 0
