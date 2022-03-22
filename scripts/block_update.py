@@ -2,7 +2,8 @@
 DOMAIN=$1
 DRUPAL_DEFAULT_ACCOUNT_PASSWORD=$2
 URL="https://${DOMAIN}/term_from_uri?_format=json&uri=https%3A%2F%2Fschema.org%2FBook"
-BOOK_TERM_ID=$(curl -u admin:$DRUPAL_DEFAULT_ACCOUNT_PASSWORD -X GET $URL | jq .[].tid[].value)
+BOOK_TERM_ID=$(curl -u admin:"$DRUPAL_DEFAULT_ACCOUNT_PASSWORD" -X GET "$URL" | jq .[].tid[].value)
+echo "book term id: $BOOK_TERM_ID"
 MANIFEST_URL="https://${DOMAIN}/node/[node:nid]/book-manifest"
 
 # Set book-manifest url
