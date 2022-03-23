@@ -14,6 +14,9 @@ site_path="${inital_path}"
 public_files_path="${site_path}"/web/sites/default/files
 private_files_path="${site_path}"/web/sites/default/private_files
 
+# register path of private file directroy
+sed -i "/file_private_path/c\$settings['file_private_path'] = 'sites/default/private_files';" /var/www/drupal/web/sites/default/settings.php 
+
 #Enable access control modules
 drush -y pm:enable group groupmedia group_permissions gnode islandora_group_defaults media_library_edit
 
