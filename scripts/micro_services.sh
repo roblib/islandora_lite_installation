@@ -63,8 +63,8 @@ drush -y pm:enable advancedqueue_runner triplestore_indexer fits
 drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/advanced_queue
 
 # configure advanced queue runner
-drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig drush_path /var/www/drupal/vendor/drush/drush/drush
-drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig root_path /var/www/drupal
+drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig drush_path "${site_path}"/vendor/drush/drush/drush
+drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig root_path "${site_path}"
 drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig auto-restart-in-cron 1
 drush -y config-set --input-format=yaml advancedqueue_runner.runnerconfig queues "
 - default: default
