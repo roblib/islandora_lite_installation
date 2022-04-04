@@ -7,4 +7,4 @@ inital_path=$PWD
 site_path="${inital_path}"/..
 
 # import advanced search configs
-drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/advanced_search
+drush -y config-import --partial --source="${site_path}"/islandora_lite_installation/configs/advanced_search
