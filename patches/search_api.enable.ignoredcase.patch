@@ -1,0 +1,24 @@
+diff --git a/src/Form/IndexProcessorsForm.php b/src/Form/IndexProcessorsForm.php
+index 57db41e4..8d9c18c8 100644
+--- a/src/Form/IndexProcessorsForm.php
++++ b/src/Form/IndexProcessorsForm.php
+@@ -133,6 +133,19 @@ class IndexProcessorsForm extends EntityForm {
+       $discouraged_warning = '<br /><strong>' . $this->t('It is recommended not to use this processor with the selected server.') . '</strong>';
+     }
+ 
++    /* digital-utsc */
++    $improvised_processors = [];
++    $i =0;
++    if (count($discouraged_processors) > 0) {
++      foreach ($discouraged_processors as $p => $i) {
++        if ($p !== "ignorecase") {
++          $improvised_processors[$p] = $i;
++        }
++        $i++;
++      }
++    }
++    $discouraged_processors = $improvised_processors;
++
+     $form['#tree'] = TRUE;
+     $form['#attached']['library'][] = 'search_api/drupal.search_api.processors';
+     $form['#title'] = $this->t('Manage processors for search index %label', ['%label' => $this->entity->label()]);
