@@ -8,4 +8,8 @@ source $(dirname $0)/site_config.sh
 # rest config
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/rest_config
 
+# media config
+"$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/media_form_display
+
+
 
