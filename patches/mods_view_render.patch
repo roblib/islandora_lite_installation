@@ -1,0 +1,12 @@
+diff --git a/src/Plugin/OaiMetadataMap/Mods.php b/src/Plugin/OaiMetadataMap/Mods.php
+index b54d08d..7359c0a 100644
+--- a/src/Plugin/OaiMetadataMap/Mods.php
++++ b/src/Plugin/OaiMetadataMap/Mods.php
+@@ -91,6 +91,7 @@ class Mods extends OaiMetadataMapBase {
+     $view->preExecute();
+     $view->execute();
+     $view_result = $view->result;
++    $view->render();
+ 
+     foreach ($view_result as $row) {
+       foreach ($view->field as $field) {
