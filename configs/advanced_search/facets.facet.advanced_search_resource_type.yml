@@ -10,7 +10,7 @@ id: advanced_search_resource_type
 name: 'AdvancedSearch: Resource Type'
 weight: 0
 min_count: 1
-url_alias: advanced_search_resource_type
+url_alias: resource_type
 facet_source_id: 'search_api:views_page__advanced_search__page_1'
 field_identifier: resource_type
 query_operator: or
@@ -27,7 +27,7 @@ widget:
   type: links
   config:
     show_numbers: true
-    soft_limit: 0
+    soft_limit: 10
     show_reset_link: false
     reset_text: 'Show all'
     hide_reset_when_no_selection: false
@@ -58,6 +58,11 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  hierarchy_processor:
+    processor_id: hierarchy_processor
+    weights:
+      build: 100
+    settings: {  }
   list_item:
     processor_id: list_item
     weights:
