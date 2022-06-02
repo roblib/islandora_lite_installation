@@ -12,4 +12,10 @@ cp "$islandora_lite_installation_path"/patches/workbench_integration.patch "$sit
 cd "$site_path"/web/modules/contrib/islandora_workbench_integration && patch --forward -p1 < workbench_integration.patch
 cd "$current_path"
 
+cp "$islandora_lite_installation_path"/patches/mods_view_render.patch "$site_path"/web/modules/contrib/rest_oai_pmh/
+cd "$site_path"/web/modules/contrib/rest_oai_pmh && patch --forward -p1 < mods_view_render.patch
+cd "$current_path"
+
+cp  "$islandora_lite_installation_path"/templates/mods.html.twig "$site_path"/web/modules/contrib/rest_oai_pmh/templates
+
 "$drush" pm:enable islandora_workbench_integration
