@@ -10,7 +10,7 @@
 {% set name_type_info = elements.linked_agent_vocabulary|split(',') %}
 
 {% set name_type_info_x = name_type_info[loop.index - 1]|replace({"Person":"person"})|raw %}
-{% set name_type_info_x = name_type_info[loop.index - 1]|replace({"Corporate Body":"corporate"})|raw %}
+{% set name_type_info_x = name_type_info_x|replace({"Corporate Body":"corporate"})|raw %}
 
 <name type="{{ name_type_info_x }}">
     <role>
@@ -61,16 +61,18 @@
   {% for temporal in elements.subject_temporal |split ('|') %}
     <temporal>{{ temporal|trim }}</temporal>
   {% endfor %}
-  {% for subjectname_personal in elements.subject_name_personal |split ('|') %}
-    <name type="personal">
-      <namePart>{{ subjectname_personal|trim }}</namePart>
-    </name>
+ 
+  {% set name_type_info = elements.subjects_name_vocabulary|split('|') %}
+  {% for subject_name_info in elements.subjects_name |split ('|') %}
+
+  {% set name_type_info_x = name_type_info[loop.index - 1]|replace({"Person":"person"})|raw %}
+  {% set name_type_info_x = name_type_info_x|replace({"Corporate Body":"corporate"})|raw %}
+
+  <name type="{{ name_type_info_x }}">
+    <namePart>{{ subject_name_info }}</namePart>
+  </name>
   {% endfor %}
-  {% for subjectname_corporate in elements.subject_name_corporate |split ('|') %}
-    <name type="corporate">
-      <namePart>{{ subjectname_corporate|trim }}</namePart>
-    </name>
-  {% endfor %}
+
   <hierarchicalGeographic>
     <continent>{{ elements.subject_hierarchicalgeographic_continent }}</continent>
     <country>{{ elements.subject_hierarchicalgeographic_country }}</country>
