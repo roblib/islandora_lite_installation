@@ -8,8 +8,10 @@ source $(dirname $0)/site_config.sh
 # rest config
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/rest
 
-# media config
+# media - overwrite default form display
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/media_form_display
 
+# simple config for rest_oai_pmh, citation_select
+"$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/simple
 
 
