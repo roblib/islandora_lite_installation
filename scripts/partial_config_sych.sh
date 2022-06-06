@@ -14,4 +14,5 @@ source $(dirname $0)/site_config.sh
 # simple config for rest_oai_pmh, citation_select
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/simple
 
-
+# simple config for blocks
+"$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/blocks_olivero
