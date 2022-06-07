@@ -1,0 +1,13 @@
+dataTableSettings:
+  autoWidth: 1
+  deferRender: 0
+  info: 0
+  lengthChange: 0
+  ordering: 1
+  paging: 1
+  processing: 1
+  searching: 1
+  stateSave: 0
+  scrollX: '5'
+  scrollY: '-1'
+  pageLength: '10'
