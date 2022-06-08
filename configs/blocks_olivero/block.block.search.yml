@@ -10,7 +10,7 @@ dependencies:
 id: search
 theme: olivero
 region: highlighted
-weight: 0
+weight: -15
 provider: null
 plugin: search_block
 settings:
