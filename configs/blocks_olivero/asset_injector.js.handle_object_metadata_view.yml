@@ -6,11 +6,9 @@ dependencies:
     - node
 id: handle_object_metadata_view
 label: 'Handle Object metadata view'
-code: |2-
-   var article = jQuery("article.node--view-mode-openseadragon-viewer")
-  var openseadragon_viewer = article.find('div.node__content').find('div.field--name-field-islandora-object-media');
-  var article_parent = article.parent().parent().parent();
-  openseadragon_viewer.insertAfter("#block-bettersocialsharingbuttons");
+code: |-
+  var media_viewer = jQuery('div.node__content').find('div.field--name-field-islandora-object-media');
+  media_viewer.insertAfter("#block-bettersocialsharingbuttons");
 noscript: ''
 noscriptRegion: {  }
 jquery: false
