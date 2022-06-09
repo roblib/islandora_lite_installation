@@ -26,6 +26,45 @@ code: |-
   #iiif-manifest img { 
      width: 50px;
   }
+
+  #block-olivero-content { 
+    display:none !important;
+  }
+
+  .contextual-region {
+    margin: 0 !important;
+    justify-content: left; 
+    margin-bottom: 20px !important;
+  }
+
+  #block-bettersocialsharingbuttons { 
+    margin: 0 !important; 
+  }
+
+  .field--name-field-islandora-object-media .field__label { 
+    display:none !important;
+  }
+
+  #block-olivero-page-title { 
+    margin-bottom: 20px !important;
+  }
+
+  .view-id-item_metadata .view-content table tbody tr {
+        border-bottom: 1px solid #ccc;
+      text-align: left !important;
+  }
+  .view-id-item_metadata .view-content table tbody tr th {
+    width: 20% !important;
+  }
+  .right-col {
+    flex: 1;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .right-col input.form-submit {
+  	margin-top: 0 !important;
+  }
 media: all
 preprocess: true
 conditions:
