@@ -37,6 +37,10 @@ code: |-
     margin-bottom: 20px !important;
   }
 
+  .social-sharing-buttons {
+    justify-content: left;
+  }
+
   #block-bettersocialsharingbuttons { 
     margin: 0 !important; 
   }
