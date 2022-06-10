@@ -69,6 +69,10 @@ code: |-
   .right-col input.form-submit {
   	margin-top: 0 !important;
   }
+
+  .field__item iframe { 
+    width: 100% !important;
+  }
 media: all
 preprocess: true
 conditions:
