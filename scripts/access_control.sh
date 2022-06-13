@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #inital_path
-inital_path=/var/www/drupal
+inital_path="${site_path}"
 
 #current site
 site_path="${inital_path}"
@@ -21,13 +21,13 @@ drush -y pm:enable group groupmedia group_permissions gnode islandora_group_defa
 drush -y pm:enable islandora_group group_solr
 
 # import group_permissions
-drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/group_permission
+drush -y config-import --partial --source="${site_path}"/islandora_lite_installation/configs/group_permission
 
 # configure file system
-drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/private_file_system/system
+drush -y config-import --partial --source="${site_path}"/islandora_lite_installation/configs/private_file_system/system
 
 # configure media's file fields
-drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/private_file_system/media
+drush -y config-import --partial --source="${site_path}"/islandora_lite_installation/configs/private_file_system/media
 
 
 # Apply patch for file_entity
@@ -36,7 +36,7 @@ cd "${site_path}"/web/modules/contrib/file_entity && patch -p1 < override_file_a
 
 
 # import access control fields
-drush -y config-import --partial --source=/var/www/drupal/islandora_lite_installation/configs/access_control
+drush -y config-import --partial --source="${site_path}"/islandora_lite_installation/configs/access_control
 
 # import config for access controle field with taxonomy terms
 drush -y config-set --input-format=yaml islandora_group.config collection_based "islandora_access"

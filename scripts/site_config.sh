@@ -4,6 +4,8 @@
 site_path=/var/www/drupal
 drush="$site_path"/vendor/drush/drush/drush
 islandora_lite_installation_path="/var/www/drupal/islandora_lite_installation"
+site_config_path="/var/www/drupal/dsu_sites_config"
+
 
 #configure_search_api_solr_module
 solr_host=http://islandora.traefik.me:8983/solr
