@@ -12,20 +12,20 @@ wget -P "${site_path}"/web/sites/default/files https://digital.utsc.utoronto.ca/
 git clone -b doris git@github.com:digitalutsc/dsu_subtheme_barrioDepartments.git "${site_path}"/web/themes/contrib/dsu_subtheme_barrioDepartments
 
 # clear cache
-drush cr
+"$drush" cr
 
 # enable theme
-drush -y then barriodepartments
-drush -y config-set system.theme default barriodepartments
+"$drush" -y then barriodepartments
+"$drush" -y config-set system.theme default barriodepartments
 
 # enable theme settings
-drush -y config-import --partial --source="${site_path}"/dsu_sites_config/all/themes
+"$drush" -y config-import --partial --source="${site_path}"/dsu_sites_config/all/themes
 
 # import custom blocks
-drush ib
+"$drush" ib
 
 # enable blocks 
-docker-compose exec -T drupal drush -y config-import --partial --source="${site_path}"/dsu_sites_config/all/blocks
+"$drush" -y config-import --partial --source="${site_path}"/dsu_sites_config/all/blocks
 
 # clear cache
-docker-compose exec -T drupal drush cr
+"$drush" cr
