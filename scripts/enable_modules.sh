@@ -10,3 +10,4 @@ source $(dirname $0)/site_config.sh
 "$drush" -y migrate:import --group=islandora
 
 "$drush" -y then olivero
+"$drush" -y config-set system.theme default olivero
