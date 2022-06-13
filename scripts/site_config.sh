@@ -3,7 +3,7 @@
 #current site
 site_path=/var/www/drupal
 drush="$site_path"/vendor/drush/drush/drush
-islandora_lite_installation_path="/var/www/drupal/islandora_lite_installation"
+islandora_lite_installation_path="$site_path/islandora_lite_installation"
 site_config_path="/var/www/drupal/dsu_sites_config"
 
 
