@@ -2,6 +2,11 @@
 
 source $(dirname $0)/site_config.sh
 
+# IIIF server configs
+"$drush" -y config:set openseadragon.settings iiif_server "$cantaloupe_url"
+"$drush" -y config:set openseadragon.settings manifest_view "iiif_manifest"
+"$drush" -y config:set islandora_iiif.settings iiif_server "$cantaloupe_url"
+
 # configure document mimetypes
 "$drush" -y --input-format=yaml config:set file_entity.type.document mimetypes "
 - text/plain
@@ -30,7 +35,7 @@ source $(dirname $0)/site_config.sh
 "$drush" -y config:set field.field.media.audio.field_media_audio_file settings.file_extensions "mp3 wav aac m4a"
 
 # not sure where to set this in isle-dc
-"$drush" -y config:set search_api.server.default_solr_server backend_config.connector_config.core ISLANDORA
+"$drush" -y config:set search_api.server.default_solr_server backend_config.connector_config.core "$solr_core"
 
 # set front page
 "$drush" -y config:set system.site page.front "/collections"
