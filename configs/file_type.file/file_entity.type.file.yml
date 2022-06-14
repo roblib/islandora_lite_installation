@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies: {  }
+id: file
+label: File
+description: 'Files that do not fit into other types listed here.'
+mimetypes:
+  - application/zip
+  - application/gzip
+  - application/json

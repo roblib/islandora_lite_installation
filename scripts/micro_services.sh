@@ -43,6 +43,9 @@ fi
 #Enable microservice modules
 "$drush" -y pm:enable advancedqueue_runner triplestore_indexer fits
 
+#Import fits field for File type
+"$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/file_type.file
+
 # configure Advanced Queue
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/advanced_queue
 
