@@ -19,3 +19,7 @@ cd "$current_path"
 cp  "$islandora_lite_installation_path"/templates/mods.html.twig "$site_path"/web/modules/contrib/rest_oai_pmh/templates
 
 "$drush" pm:enable islandora_workbench_integration
+
+wget https://raw.githubusercontent.com/digitalutsc/islandora_lite_installation/main/patches/advanced_search_issues_9.patch -P "$site_path"/web/modules/contrib/facets
+cd "$site_path"/web/modules/contrib/facets && patch --forward -p1 < advanced_search_issues_9.patch
+cd "$current_path"
