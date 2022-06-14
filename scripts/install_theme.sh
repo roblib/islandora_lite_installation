@@ -29,3 +29,5 @@ git clone -b doris git@github.com:digitalutsc/dsu_subtheme_barrioDepartments.git
 
 # clear cache
 "$drush" cr
+
+"$drush" -y config-set block.block.barriodepartments_miradorblock settings.iiif_manifest_url "$site_url"/node/[node:nid]/book-manifest
