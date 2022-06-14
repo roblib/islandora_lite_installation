@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.media.video.ableplayer_caption
+    - field.field.media.video.ableplayer_chapter
+    - field.field.media.video.ableplayer_description
+    - field.field.media.video.ableplayer_poster_image
+    - field.field.media.video.ableplayer_sign_language
+    - field.field.media.video.field_media_use
+    - field.field.media.video.field_media_video_file
+    - media.type.video
+  module:
+    - fico
+    - file_entity
+id: media.video.default
+targetEntityType: media
+bundle: video
+mode: default
+content:
+  field_media_video_file:
+    type: file_video
+    label: visually_hidden
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      muted: false
+      width: 640
+      height: 480
+      multiple_file_behavior: tags
+      playsinline: 0
+    third_party_settings:
+      fico:
+        fico:
+          condition: hide_not_empty
+          settings:
+            target_field: field_media_use
+    weight: 0
+    region: content
+hidden:
+  ableplayer_caption: true
+  ableplayer_chapter: true
+  ableplayer_description: true
+  ableplayer_poster_image: true
+  ableplayer_sign_language: true
+  created: true
+  field_media_use: true
+  langcode: true
+  name: true
+  search_api_excerpt: true
+  thumbnail: true
+  uid: true
