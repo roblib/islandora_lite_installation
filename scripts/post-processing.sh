@@ -7,6 +7,9 @@ source $(dirname $0)/site_config.sh
 "$drush" -y config:set openseadragon.settings manifest_view "iiif_manifest"
 "$drush" -y config:set islandora_iiif.settings iiif_server "$cantaloupe_url"
 
+# Ensure standalone_url is enabled
+"$drush" -y config:set media.settings standalone_url true
+
 # configure document mimetypes
 "$drush" -y --input-format=yaml config:set file_entity.type.document mimetypes "
 - text/plain
