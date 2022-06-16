@@ -1,0 +1,10 @@
+includeSelf: true
+referenceFields:
+  - field_member_of
+  - field_part_of
+dependencies:
+  module:
+    - islandora
+  enforced:
+    module:
+      - islandora_breadcrumbs
