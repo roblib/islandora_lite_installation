@@ -10,4 +10,4 @@ dataTableSettings:
   stateSave: 0
   scrollX: '5'
   scrollY: '-1'
-  pageLength: '10'
+  pageLength: '20'
