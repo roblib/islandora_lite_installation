@@ -20,7 +20,7 @@ if [ $1 == "playbook" ]; then
         
 elif [ $1 == "docker" ]; then
     #blazegraph
-    blazegraph_url=https://islandora.traefik.me:8082/bigdata
+    blazegraph_url=http://islandora.traefik.me:8082/bigdata
     blazegraph_namespace=islandora
 
     # install Fits
