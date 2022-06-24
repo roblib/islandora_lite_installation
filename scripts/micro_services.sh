@@ -60,6 +60,8 @@ fi
 "
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig interval '5'
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig mode limit
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig started_at $(date +%s)
+"$drush" cron
 
 # Configure Rest Services (enable jsonld endpoint)
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/rest
