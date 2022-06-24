@@ -23,15 +23,16 @@ elif [ $1 == "docker" ]; then
     blazegraph_url=https://islandora.traefik.me:8082/bigdata
     blazegraph_namespace=islandora
 
+    # install Fits
+    mkdir -p /opt/fits
+    wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
+    unzip /opt/fits/fits-latest.zip -d /opt/fits
+    chmod +x /opt/fits/fits.sh
+    
     #fits
     fits_mode="local"
     fits_url=/opt/fits-1.4.1/fits.sh
     fits_config_var="fits-path"
-    
-    # Setup Fits
-    #mkdir -p /opt/fits
-    #wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
-    #unzip /opt/fits/fits-latest.zip
 elif [ $1 == "production" ]; then
     echo "Vars set in site_config.sh"
 else
