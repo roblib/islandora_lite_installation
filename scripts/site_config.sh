@@ -20,6 +20,6 @@ blazegraph_namespace=islandora
 
 #fits
 fits_mode="local"
-fits_url=/opt/fits-1.4.1/fits.sh
+fits_url=/opt/fits/fits.sh
 fits_config_var="fits-path"
 
