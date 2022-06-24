@@ -23,11 +23,11 @@ elif [ $1 == "docker" ]; then
     blazegraph_url=http://islandora.traefik.me:8082/bigdata
     blazegraph_namespace=islandora
 
-    # install Fits
-    mkdir -p /opt/fits
-    wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
-    unzip /opt/fits/fits-latest.zip -d /opt/fits
-    chmod +x /opt/fits/fits.sh
+    # install Fits commented because won't work, need install from buildkits
+    #mkdir -p /opt/fits
+    #wget https://github.com/harvard-lts/fits/releases/download/1.4.0/fits-latest.zip -P /opt/fits
+    #unzip /opt/fits/fits-latest.zip -d /opt/fits
+    #chmod +x /opt/fits/fits.sh
     
     #fits
     fits_mode="local"
