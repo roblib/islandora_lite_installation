@@ -13,9 +13,9 @@ theme: olivero
 region: sidebar
 weight: -7
 provider: null
-plugin: 'facet_block:subject'
+plugin: 'facet_block:collection_subject'
 settings:
-  id: 'facet_block:subject'
+  id: 'facet_block:collection_subject'
   label: Subject
   label_display: visible
   provider: facets

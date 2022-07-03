@@ -13,9 +13,9 @@ theme: olivero
 region: sidebar
 weight: 0
 provider: null
-plugin: 'facet_block:publication_date_advanced_search_'
+plugin: 'facet_block:advanced_search_publication_date'
 settings:
-  id: 'facet_block:publication_date_advanced_search_'
+  id: 'facet_block:advanced_search_publication_date'
   label: 'Publication Date'
   label_display: visible
   provider: facets

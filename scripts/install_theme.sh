@@ -2,7 +2,7 @@
 
 source $(dirname $0)/site_config.sh
 
-git clone https://github.com/digitalutsc/dsu_sites_config "${site_path}"/dsu_sites_config
+git clone -b cleanup https://github.com/digitalutsc/dsu_sites_config "${site_path}"/dsu_sites_config
 
 
 # Download utsc logo 

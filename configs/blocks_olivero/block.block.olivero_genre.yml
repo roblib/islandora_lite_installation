@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.genre
+    - facets.facet.collection_genre
   module:
     - context
     - facets
@@ -13,14 +13,14 @@ theme: olivero
 region: sidebar
 weight: -6
 provider: null
-plugin: 'facet_block:genre'
+plugin: 'facet_block:collection_genre'
 settings:
-  id: 'facet_block:genre'
+  id: 'facet_block:collection_genre'
   label: Genre
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: genre_2
+  block_id: olivero_genre
 visibility:
   view_inclusion:
     id: view_inclusion
