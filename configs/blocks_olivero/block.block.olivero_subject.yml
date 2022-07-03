@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.subject
+    - facets.facet.collection_subject
   module:
     - context
     - facets

@@ -2,7 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.publication_date_advanced_search_
+    - facets.facet.advanced_search_publication_date
   module:
     - context
     - facets

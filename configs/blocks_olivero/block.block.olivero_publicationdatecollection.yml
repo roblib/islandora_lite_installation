@@ -2,13 +2,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.publication_date_collection_
+    - facets.facet.collection_publication_date
   module:
     - context
     - facets
   theme:
     - olivero
-id: publicationdatecollection
+id: olivero_publicationdatecollection
 theme: olivero
 region: sidebar
 weight: 0
