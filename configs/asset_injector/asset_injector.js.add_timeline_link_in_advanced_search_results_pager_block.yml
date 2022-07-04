@@ -3,7 +3,6 @@ status: true
 dependencies:
   module:
     - context
-    - system
 id: add_timeline_link_in_advanced_search_results_pager_block
 label: 'Add Timeline Link in Advanced Search Results Pager block'
 code: |
@@ -24,9 +23,5 @@ conditions:
     id: context_all
     negate: null
     values: ''
-  request_path:
-    id: request_path
-    negate: false
-    pages: /collection/2
 contexts: {  }
 conditions_require_all: true
