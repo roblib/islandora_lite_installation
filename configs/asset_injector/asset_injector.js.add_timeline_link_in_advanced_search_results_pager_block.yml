@@ -7,7 +7,8 @@ id: add_timeline_link_in_advanced_search_results_pager_block
 label: 'Add Timeline Link in Advanced Search Results Pager block'
 code: |
   jQuery(window).on('load', function(){
-    jQuery(".pager__display").find('ul').append('<li class="pager__item"><a href="/collection/2/timeline" class="pager__link" target="_blank"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Timeline</a></li>');
+    current_url = window.location.pathname;
+    jQuery(".pager__display").find('ul').append('<li class="pager__item"><a href="/collection/'+ current_url.split("/")[2] +'/timeline" class="pager__link" target="_blank"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Timeline</a></li>');
   });
 noscript: ''
 noscriptRegion: {  }
