@@ -51,3 +51,4 @@ application/gzip wacz
 application/vnd.apple.mpegurl m3u8
 application/json json"
 
+"$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/asset_injector
