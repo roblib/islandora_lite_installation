@@ -1,0 +1,41 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - context
+id: overwrite_behavior_of_search_button_when_timeline_and_map
+label: 'Overwrite behavior of Search button when timeline and map'
+code: |-
+  jQuery(document).ready(function() {
+    jQuery("button.advanced-search-form__search").click(function(){
+      setTimeout(
+        function() 
+        {
+          console.log(window.location.href);
+          console.log(window.location.search);
+          window.location.href = window.location.href;
+        }, 1000);
+    });
+  });
+noscript: ''
+noscriptRegion: {  }
+jquery: true
+header: false
+preprocess: false
+conditions:
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
+  view_inclusion:
+    id: view_inclusion
+    negate: false
+    view_inclusion:
+      view-map_solr_based_view-page_1: view-map_solr_based_view-page_1
+      view-timelinejs_solr_based_view-page_1: view-timelinejs_solr_based_view-page_1
+contexts: {  }
+conditions_require_all: true
