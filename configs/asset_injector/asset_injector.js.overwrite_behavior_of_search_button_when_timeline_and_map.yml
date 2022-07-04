@@ -11,11 +11,21 @@ code: |-
       setTimeout(
         function() 
         {
-          console.log(window.location.href);
-          console.log(window.location.search);
           window.location.href = window.location.href;
         }, 1000);
     });
+    
+    $(document).keypress(function(event){
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      if(keycode == '13'){
+        setTimeout(
+        function() 
+        {
+          window.location.href = window.location.href;
+        }, 1000);
+      }
+    });
+    
   });
 noscript: ''
 noscriptRegion: {  }
