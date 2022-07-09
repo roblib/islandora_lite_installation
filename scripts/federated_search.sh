@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# enable the module
+"$drush" -y pm:enable ajax_solr_search
+
 source $(dirname $0)/site_config.sh
 
 [ -d "${site_path}"/dsu_sites_config ] && git clone https://github.com/digitalutsc/dsu_sites_config "${site_path}"/dsu_sites_config
