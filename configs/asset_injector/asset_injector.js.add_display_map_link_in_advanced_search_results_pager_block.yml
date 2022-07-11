@@ -9,6 +9,9 @@ code: |
   jQuery(window).on('load', function(){
      current_url = window.location.pathname;
     jQuery(".pager__display").find('ul').append('<li class="pager__item"><a href="/collection/'+ current_url.split("/")[2] +'/map" class="pager__link" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Map</a></li>');
+    
+    // for olivero theme
+    jQuery(".pager__group").children('ul').eq(1).append('<li class="pager__item"><a href="/collection/'+ current_url.split("/")[2] +'/map" class="pager__link" target="_blank"><i class="fa fa-globe" aria-hidden="true"></i> Map</a></li>');
   });
 noscript: ''
 noscriptRegion: {  }
