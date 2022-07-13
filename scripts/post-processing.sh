@@ -24,7 +24,8 @@ source $(dirname $0)/site_config.sh
 - application/vnd.openxmlformats-officedocument.presentationml.presentation
 - application/vnd.openxmlformats-officedocument.wordprocessingml.document
 - text/csv
-- text/vtt"
+- text/vtt
+- text/x-gettext-translation"
 
 "$drush" -y --input-format=yaml config:set file_entity.type.image mimetypes "
 - image/*
@@ -33,7 +34,7 @@ source $(dirname $0)/site_config.sh
 - image/jp2"
 
 
-"$drush" -y config:set field.field.media.document.field_media_document settings.file_extensions "txt rtf doc docx ppt pptx xls xlsx pdf odf odg odp ods odt fodt fods fodp fodg key numbers pages csv vtt"
+"$drush" -y config:set field.field.media.document.field_media_document settings.file_extensions "txt rtf doc docx ppt pptx xls xlsx pdf odf odg odp ods odt fodt fods fodp fodg key numbers pages csv vtt po"
 "$drush" -y config:set field.field.media.image.field_media_image settings.file_extensions "png gif jpg jpeg tif tiff jp2"
 "$drush" -y config:set field.field.media.audio.field_media_audio_file settings.file_extensions "mp3 wav aac m4a"
 
@@ -49,6 +50,7 @@ image/jp2 jp2
 application/gzip warc
 application/gzip wacz
 application/vnd.apple.mpegurl m3u8
-application/json json"
+application/json json
+text/x-gettext-translation po"
 
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/asset_injector
