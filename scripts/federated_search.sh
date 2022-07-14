@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $(dirname $0)/site_config.sh
+
 # enable the module
 "$drush" -y pm:enable ajax_solr_search
 
