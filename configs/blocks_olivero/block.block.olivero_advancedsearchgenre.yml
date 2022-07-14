@@ -8,7 +8,7 @@ dependencies:
     - facets
   theme:
     - olivero
-id: advancedsearchgenre
+id: olivero_advancedsearchgenre
 theme: olivero
 region: sidebar
 weight: 0
@@ -20,7 +20,7 @@ settings:
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: advancedsearchgenre
+  block_id: olivero_advancedsearchgenre
 visibility:
   context:
     id: context
