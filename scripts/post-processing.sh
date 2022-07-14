@@ -54,3 +54,6 @@ application/json json
 text/x-gettext-translation po"
 
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/asset_injector
+
+# enable theme batrik
+"$drush" -y then bartik
