@@ -22,3 +22,4 @@ blazegraph_namespace=islandora
 fits_mode="remote"
 fits_url=http://localhost:8080/fits/examine
 fits_config_var="fits-server-url"
+
