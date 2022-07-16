@@ -14,7 +14,7 @@ solr_core=ISLANDORA
 cantaloupe_url="$site_url"/cantaloupe/iiif/2
 
 #blazegraph
-blazegraph_sitename=`echo $site_url |sed 's/https\?:\/\///'`
+blazegraph_sitename="$site_url"
 blazegraph_url=http://localhost:8080/bigdata
 blazegraph_namespace=islandora
 
