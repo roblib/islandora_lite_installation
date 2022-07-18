@@ -56,8 +56,9 @@ fi
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings auto-restart-in-cron 1
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings queues "
 - default: default
+- fits: fits
+- ocr_extract_text: ocr_extract_text
 - triplestore: triplestore
-- fits:fits
 "
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings interval '5'
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings mode limit
