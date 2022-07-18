@@ -9,8 +9,6 @@ site_config_path="$site_path"/dsu_sites_config
 
 
 #configure_search_api_solr_module
-solr_host=http://localhost:8983/solr
-solr_core=ISLANDORA
 cantaloupe_url="$site_url"/cantaloupe/iiif/2
 
 #blazegraph
