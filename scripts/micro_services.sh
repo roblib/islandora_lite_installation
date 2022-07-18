@@ -51,17 +51,17 @@ fi
 "$drush" -y config-import --partial --source="$islandora_lite_installation_path"/configs/advanced_queue
 
 # configure advanced queue runner
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig drush_path "${site_path}"/vendor/drush/drush/drush
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig root_path "${site_path}"
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig auto-restart-in-cron 1
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig queues "
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings drush_path "${site_path}"/vendor/drush/drush/drush
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings root_path "${site_path}"
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings auto-restart-in-cron 1
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings queues "
 - default: default
 - triplestore: triplestore
 - fits:fits
 "
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig interval '5'
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig mode limit
-"$drush" -y config-set --input-format=yaml advancedqueue_runner.runnerconfig started_at $(date +%s)
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings interval '5'
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings mode limit
+"$drush" -y config-set --input-format=yaml advancedqueue_runner.settings started_at $(date +%s)
 "$drush" cron
 
 # Configure Rest Services (enable jsonld endpoint)
