@@ -58,6 +58,7 @@ fi
 - default
 - triplestore
 - fits
+- ocr_extract_text
 "
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings interval '5'
 "$drush" -y config-set --input-format=yaml advancedqueue_runner.settings mode limit
