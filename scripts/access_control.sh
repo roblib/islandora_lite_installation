@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $(dirname $0)/site_config.sh
+
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
