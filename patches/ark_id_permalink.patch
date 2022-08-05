@@ -1,0 +1,82 @@
+diff --git a/better_social_sharing_buttons.libraries.yml b/better_social_sharing_buttons.libraries.yml
+index 9d2f729..108f8b5 100644
+--- a/better_social_sharing_buttons.libraries.yml
++++ b/better_social_sharing_buttons.libraries.yml
+@@ -9,6 +9,8 @@ copy-current-url:
+   version: 1.x
+   js:
+     js/copy-current-url.js: {}
++  dependencies:
++    - core/drupalSettings
+ 
+ # Load print css
+ print-css:
+diff --git a/js/copy-current-url.js b/js/copy-current-url.js
+index 8492313..657755e 100644
+--- a/js/copy-current-url.js
++++ b/js/copy-current-url.js
+@@ -16,7 +16,7 @@
+         $(this).on('click', function (e) {
+           e.preventDefault();
+           var popupElements = $('.social-sharing-buttons__popup');
+-          Drupal.copyTextToClipboard(window.location.href, popupElements);
++          Drupal.copyTextToClipboard(drupalSettings.socialSharing.permalink, popupElements);
+         });
+       });
+     }
+@@ -45,7 +45,7 @@
+ 
+     var $inputURL = $("<input>");
+     $("body").append($inputURL);
+-    $inputURL.val(window.location.href).select();
++    $inputURL.val(drupalSettings.socialSharing.permalink).select();
+ 
+     try {
+       document.execCommand("copy");
+@@ -74,4 +74,4 @@
+     }, 4000);
+   };
+ 
+-})(jQuery, Drupal);
+\ No newline at end of file
++})(jQuery, Drupal, drupalSettings);
+\ No newline at end of file
+diff --git a/src/Plugin/Block/SocialSharingButtonsBlock.php b/src/Plugin/Block/SocialSharingButtonsBlock.php
+index 9f8d7e8..b9068a8 100644
+--- a/src/Plugin/Block/SocialSharingButtonsBlock.php
++++ b/src/Plugin/Block/SocialSharingButtonsBlock.php
+@@ -180,7 +180,18 @@ class SocialSharingButtonsBlock extends BlockBase implements ContainerFactoryPlu
+       $title = $this->titleResolver->getTitle($request, $route);
+     }
+ 
+-    $items['page_url'] = Url::fromRoute('<current>', [], ['absolute' => TRUE]);
++    $node = \Drupal::routeMatch()->getParameter('node');
++    $cache['contexts'][] = 'route';
++    if ($node instanceof \Drupal\node\NodeInterface &&
++        $node->hasField('field_location_url') &&
++        !$node->get('field_location_url')->isEmpty()) {
++      $page_url = $node->get('field_location_url')->first()->getUrl();
++      $cache['tags'] = $node->getCacheTags();
++    } else {
++      $page_url = Url::fromRoute('<current>', [], ['absolute' => TRUE]);
++    }
++
++    $items['page_url'] = $page_url;
+     $items['description'] = '';
+     $items['title'] = Html::escape($title);
+     $items['width'] = $this->configuration['width'] ?? $config->get('width');
+@@ -193,6 +204,14 @@ class SocialSharingButtonsBlock extends BlockBase implements ContainerFactoryPlu
+     return [
+       '#theme' => 'better_social_sharing_buttons',
+       '#items' => $items,
++      '#cache' => $cache,
++      '#attached' => [
++        'drupalSettings' => [
++          'socialSharing' => [
++            'permalink' => $page_url->toString(),
++          ],
++        ],
++      ],
+     ];
+   }
+ 
